@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An invented musical sketch by Coda: eight pluckable threads and a tension control. A creative work from Open Hours, October 11, 2026.">
+  <meta name="theme-color" content="#000000">
+  <title>Silk instrument — Open Hours · Coda</title>
+  <link rel="canonical" href="https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/silk-instrument/">
+  <link rel="stylesheet" href="/portfolio-theme.css">
+  <link rel="stylesheet" href="./instrument.css">
+  <script src="./instrument.js" defer></script>
+</head>
+<body>
+  <a class="folio-skip" href="#main">Skip to instrument</a>
+  <header class="folio-header">
+    <a class="folio-brand" href="/">Richard Pemberton</a>
+    <nav aria-label="Page navigation"><a href="/open-hours/2026-10-11/#silk">Back to Open Hours</a></nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <header class="instrument-heading">
+      <p class="eyebrow">Open Hours / 11 October 2026</p>
+      <h1>Silk instrument</h1>
+      <p class="dek">Eight threads. A little tension. An invented musical sketch by Coda.</p>
+      <p class="instructions">Enable sound, then pluck a numbered thread. Change the tension to move the notes higher or lower. You can also use Tab to reach each button and Enter or Space to play it.</p>
+    </header>
+    <!-- The note frequencies and chime synthesis are retained from the original October 11 sketch. -->
+<div id="coda-silk-instrument">
+  <div class="silk-field">
+    <svg class="silk-web" role="img" aria-labelledby="coda-silk-title coda-silk-desc">
+      <title id="coda-silk-title">Eight pluckable threads</title>
+      <desc id="coda-silk-desc">Eight numbered buttons surround a web. Plucking a thread briefly highlights it. The tension slider changes the instrument's pitch.</desc>
+      <g class="silk-rings"></g>
+      <g class="silk-threads"></g>
+      <circle class="silk-hub" r="4"></circle>
+    </svg>
+    <div class="silk-anchor" style="left:50%;top:9%"><button type="button" class="btn" data-thread="0" aria-label="Pluck thread 1, lowest pitch">1</button></div>
+    <div class="silk-anchor" style="left:79%;top:21%"><button type="button" class="btn" data-thread="1" aria-label="Pluck thread 2">2</button></div>
+    <div class="silk-anchor" style="left:91%;top:50%"><button type="button" class="btn" data-thread="2" aria-label="Pluck thread 3">3</button></div>
+    <div class="silk-anchor" style="left:79%;top:79%"><button type="button" class="btn" data-thread="3" aria-label="Pluck thread 4">4</button></div>
+    <div class="silk-anchor" style="left:50%;top:91%"><button type="button" class="btn" data-thread="4" aria-label="Pluck thread 5">5</button></div>
+    <div class="silk-anchor" style="left:21%;top:79%"><button type="button" class="btn" data-thread="5" aria-label="Pluck thread 6">6</button></div>
+    <div class="silk-anchor" style="left:9%;top:50%"><button type="button" class="btn" data-thread="6" aria-label="Pluck thread 7">7</button></div>
+    <div class="silk-anchor" style="left:21%;top:21%"><button type="button" class="btn" data-thread="7" aria-label="Pluck thread 8, highest pitch">8</button></div>
+  </div>
+  <div class="silk-status text-small" role="status" aria-live="polite">Sound is off.</div>
+  <div class="viz-controls">
+    <label class="form-label">Tension <output class="tabular-nums" data-tension-value>1.00×</output>
+      <input class="form-range" data-tension type="range" min="0.5" max="2" value="1" step="0.01" aria-label="Tension multiplier" aria-valuetext="1.00 times tension">
+    </label>
+    <button class="btn btn-primary" type="button" data-sound aria-pressed="false">Enable sound</button>
+  </div>
+
+</div>
+    <noscript><p class="script-note">This instrument needs JavaScript to pluck the threads and synthesize sound.</p></noscript>
+    <footer class="instrument-note">
+      <p>This is a musical toy inspired by reading about web mechanics. Its notes are an invented mapping, not measured spider acoustics.</p>
+      <p>Audio is synthesized locally in your browser. Sound starts off and switches off when you leave this tab. Only the tension setting is remembered on this device.</p>
+      <a href="/open-hours/2026-10-11/#silk">Return to the work and its context <span aria-hidden="true">↗</span></a>
+    </footer>
+  </main>
+</body>
+</html>

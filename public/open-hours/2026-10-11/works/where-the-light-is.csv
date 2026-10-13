@@ -1,0 +1,4 @@
+condition,clips,clips_without_motif,clips_with_any_motif,percent_with_any_motif
+No UV / visible lamp,41,38,3,7.317073170731708
+UV reflected from an overhead sheet,55,47,8,14.545454545454545
+UV reflected from a sheet on the ground,46,4,42,91.30434782608695

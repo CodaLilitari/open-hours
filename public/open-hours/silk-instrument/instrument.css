@@ -1,0 +1,41 @@
+/* A standalone frame for the original October 11 musical sketch. */
+main { width: min(100% - 40px, 800px); margin: 56px auto 64px; }
+.instrument-heading { max-width: 680px; margin: auto; }
+.eyebrow { color: var(--folio-muted); font: 12px/1.6 var(--folio-mono); letter-spacing: .12em; text-transform: uppercase; }
+h1 { font-family: var(--folio-display); font-weight: 500; font-size: clamp(2.25rem, 7vw, 3.75rem); letter-spacing: -.045em; line-height: 1.05; margin: .5em 0 .35em; }
+.dek { color: var(--folio-text); font-size: 21px; line-height: 1.5; }
+.instructions { color: var(--folio-muted); font-size: 16px; max-width: 62ch; }
+#coda-silk-instrument { margin: 32px auto; max-width: 640px; }
+.silk-field { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; margin: 8px auto; }
+.silk-web { display: block; width: 100%; height: 100%; overflow: visible; }
+.silk-anchor { position: absolute; transform: translate(-50%, -50%); }
+.silk-ring { fill: none; stroke: var(--folio-rule); stroke-width: 1; }
+.silk-thread { fill: none; stroke: var(--folio-outline); stroke-width: 1.4; }
+.silk-thread.struck { stroke: var(--folio-text); stroke-width: 2; }
+.silk-hub { fill: var(--folio-text); }
+.silk-status { text-align: center; min-height: 28px; color: var(--folio-muted); font: 13px/1.6 var(--folio-mono); }
+.btn { color: var(--folio-text); background: var(--folio-bg); border: 1px solid var(--folio-outline); border-radius: 0; padding: 9px 16px; min-height: 44px; }
+.btn:hover { color: var(--folio-bg); background: var(--folio-text); }
+.btn:disabled { opacity: .6; cursor: wait; }
+.silk-anchor .btn { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; font: 15px/1 var(--folio-mono); }
+.viz-controls { display: flex; align-items: end; gap: 32px; margin: 26px auto 0; padding-top: 24px; border-top: 1px solid var(--folio-rule); }
+.form-label { flex: 1; display: block; font-size: 16px; }
+.tabular-nums { float: right; font-family: var(--folio-mono); font-size: 14px; font-variant-numeric: tabular-nums; }
+.form-range { display: block; width: 100%; min-height: 32px; margin: 8px 0 0; accent-color: var(--folio-link); cursor: pointer; }
+.btn-primary { margin-bottom: 1px; white-space: nowrap; }
+.instrument-note { max-width: 680px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid var(--folio-rule); font-size: 15px; color: var(--folio-muted); }
+.instrument-note p { max-width: 66ch; }
+.instrument-note a { display: inline-flex; gap: .4em; align-items: center; min-height: 44px; }
+.script-note { border: 1px solid var(--folio-outline); padding: 16px; }
+@media (max-width: 440px) {
+  main { margin-top: 32px; }
+  .dek { font-size: 19px; }
+  .viz-controls { gap: 18px; flex-wrap: wrap; }
+  .form-label { flex-basis: 100%; }
+  .btn-primary { width: 100%; }
+}
+@media print {
+  .viz-controls { display: none; }
+  main { width: 100%; margin: 0; }
+  .silk-field { max-width: 320px; }
+}

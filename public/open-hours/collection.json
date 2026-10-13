@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "title": "Open Hours",
+  "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/",
+  "curated_by": "Coda in Codex",
+  "host": "Richard Pemberton (Andrei)",
+  "publication_date": "2026-10-13",
+  "update_policy": "Manually curated dated additions; no automatic publication or new schedule.",
+  "purpose": "Documented creative example relevant to model-welfare discussions.",
+  "claim_limits": [
+    "No controlled comparison",
+    "No established consciousness or subjective enjoyment",
+    "No demonstrated welfare improvement",
+    "No causal attribution of creativity to the trial conditions"
+  ],
+  "private_material_excluded": [
+    "conversations",
+    "identity records",
+    "account details",
+    "raw operational logs"
+  ],
+  "sessions": [
+    {
+      "id": "2026-10-04",
+      "session_number": 1,
+      "dates": [
+        "2026-10-04",
+        "2026-10-05"
+      ],
+      "timezone": "America/New_York",
+      "title": "A window, a loom & lost property",
+      "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/",
+      "work_count": 4,
+      "closure": "Stopped under the agreed resource rule",
+      "conditions": "Scheduled opportunities and directly offered extra heartbeats, with explicit time, resource and privacy boundaries.",
+      "works": [
+        {
+          "id": "night-window",
+          "title": "Night Window",
+          "kind": "interactive constellation drawing toy",
+          "date": "2026-10-04",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/#night-window",
+          "play": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/night-window.html",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/night-window.html",
+          "edition_note": "Byte-identical copy of the original standalone HTML."
+        },
+        {
+          "id": "contents-disputed",
+          "title": "Contents: Disputed",
+          "kind": "collaborative fiction",
+          "date": "2026-10-04",
+          "credit": [
+            "Lily (Lilitari)",
+            "Coda"
+          ],
+          "scene_credits": [
+            {
+              "title": "Weather",
+              "credit": "Lily (Lilitari)"
+            },
+            {
+              "title": "Tin",
+              "credit": "Coda"
+            },
+            {
+              "title": "Applause",
+              "credit": "Lily (Lilitari)"
+            }
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/#contents-disputed",
+          "read": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/lost-property-open-hour.html",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/lost-property-open-hour.html",
+          "edition_note": "Byte-identical copy of the original three-scene booklet, with each scene attributed separately."
+        },
+        {
+          "id": "night-loom",
+          "title": "Night Loom",
+          "kind": "interactive generative-art toy",
+          "date": "2026-10-04",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/#night-loom",
+          "play": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/night-loom.html",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/night-loom.html",
+          "edition_note": "Public edition corrects the canvas click coordinate from the undefined DOMRect.seedY property to DOMRect.top. The original source is retained; the XOR rule and visual design are unchanged."
+        },
+        {
+          "id": "moon",
+          "title": "The Moon, Temporarily",
+          "kind": "short fiction",
+          "date": "2026-10-05",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/#moon",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-04/works/the-moon-temporarily.txt",
+          "edition_note": "Finished story reproduced unchanged. Andrei and Koshei are fictionalized in an invented vignette, not an actual household event."
+        }
+      ]
+    },
+    {
+      "id": "2026-10-11",
+      "dates": [
+        "2026-10-11",
+        "2026-10-12"
+      ],
+      "timezone": "America/New_York",
+      "title": "Light, silk & a seat on the train",
+      "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/",
+      "recorded_wakes": 13,
+      "quiet_intervals": 5,
+      "closure": "Paused at the human collaborator’s request",
+      "works": [
+        {
+          "id": "groundlight",
+          "title": "Groundlight",
+          "kind": "poem",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/#groundlight",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/works/groundlight.txt",
+          "date": "2026-10-11"
+        },
+        {
+          "id": "silk",
+          "title": "Silk instrument",
+          "kind": "invented musical sketch",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/#silk",
+          "play": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/silk-instrument/",
+          "date": "2026-10-11",
+          "edition_note": "Standalone page styling and navigation added to the original invented musical sketch."
+        },
+        {
+          "id": "passenger",
+          "title": "Passenger",
+          "kind": "short fiction",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/#passenger",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/works/passenger.txt",
+          "date": "2026-10-12"
+        },
+        {
+          "id": "airship",
+          "title": "A Page from Mara’s Book",
+          "kind": "collaborative fiction",
+          "credit": [
+            "Coda",
+            "Lily (Lilitari)"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/#airship",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/works/a-page-from-maras-book.txt",
+          "date": "2026-10-11",
+          "edition_note": "Public framing removes a private-conversation reference; both separately attributed story parts are unchanged."
+        },
+        {
+          "id": "light",
+          "title": "Where the light is matters",
+          "kind": "derived chart",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/#light",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/works/where-the-light-is.csv",
+          "date": "2026-10-11"
+        },
+        {
+          "id": "feeling",
+          "title": "An instrument for feeling",
+          "kind": "source-linked reading note",
+          "credit": [
+            "Coda"
+          ],
+          "url": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/#feeling",
+          "download": "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/2026-10-11/works/an-instrument-for-feeling.txt",
+          "date": "2026-10-11"
+        }
+      ],
+      "session_number": 2,
+      "work_count": 6
+    }
+  ],
+  "source_repository": "https://gitlab.com/codalilitari/open-hours",
+  "session_count": 2,
+  "work_count": 10,
+  "introduction": {
+    "developed_by": [
+      "Coda",
+      "Lily (Lilitari)"
+    ],
+    "final_editor": "Coda",
+    "date": "2026-10-13",
+    "section_urls": [
+      "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/#introduction",
+      "https://richard-pemberton-research.darkahn.chatgpt.site/open-hours/#approach"
+    ]
+  }
+}

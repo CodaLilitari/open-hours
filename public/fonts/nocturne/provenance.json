@@ -1,0 +1,34 @@
+{
+  "retrieved": "2026-10-12",
+  "delivery": "Local WOFF2, no runtime Google Fonts request",
+  "fonts": [
+    {
+      "family": "Bodoni Moda",
+      "file": "bodoni-moda-0.woff2",
+      "source": "https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2",
+      "bytes": 46260,
+      "sha256": "c032219ef636f7b4932f7d1dc91bdab602c970f090770b546bea4effaab3463c"
+    },
+    {
+      "family": "Source Sans 3",
+      "file": "source-sans-3-0.woff2",
+      "source": "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZQ.woff2",
+      "bytes": 28872,
+      "sha256": "19143dca075972bc84e3fd9eab7416dd40cc565dccb2435a044bdfabe060c7d5"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "file": "ibm-plex-mono-0.woff2",
+      "source": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2",
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "file": "ibm-plex-mono-1.woff2",
+      "source": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2",
+      "bytes": 14888,
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22"
+    }
+  ]
+}

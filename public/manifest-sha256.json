@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "fonts/nocturne/bodoni-moda-0.woff2",
+      "sha256": "c032219ef636f7b4932f7d1dc91bdab602c970f090770b546bea4effaab3463c",
+      "bytes": 46260
+    },
+    {
+      "path": "fonts/nocturne/bodoni-moda-OFL.txt",
+      "sha256": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046",
+      "bytes": 4400
+    },
+    {
+      "path": "fonts/nocturne/fonts.css",
+      "sha256": "cf5926311b392de6286beb569afa70df5d5460f13bac91e05e8b7d176c4049db",
+      "bytes": 1510
+    },
+    {
+      "path": "fonts/nocturne/ibm-plex-mono-0.woff2",
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "bytes": 14708
+    },
+    {
+      "path": "fonts/nocturne/ibm-plex-mono-1.woff2",
+      "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+      "bytes": 14888
+    },
+    {
+      "path": "fonts/nocturne/ibm-plex-mono-OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "bytes": 4456
+    },
+    {
+      "path": "fonts/nocturne/provenance.json",
+      "sha256": "0bf8602e4e17ee20c5143454936f044c23a2ea1ad500a8272f9752d626dbac09",
+      "bytes": 1301
+    },
+    {
+      "path": "fonts/nocturne/source-sans-3-0.woff2",
+      "sha256": "19143dca075972bc84e3fd9eab7416dd40cc565dccb2435a044bdfabe060c7d5",
+      "bytes": 28872
+    },
+    {
+      "path": "fonts/nocturne/source-sans-3-OFL.txt",
+      "sha256": "09746787287a289323b0ec3cff4d1a4a801331b82b7207c1e186f5d26619a392",
+      "bytes": 4579
+    },
+    {
+      "path": "index.html",
+      "sha256": "c633932230c37cf7e5bb994bb46f1fd855cc7d6d956b5b3f1fbf981a5d282320",
+      "bytes": 1374
+    },
+    {
+      "path": "open-hours/2026-10-04/index.html",
+      "sha256": "bfa8299410b5bbd75e14baea0a4e76f8ad6e1c6f5c336b8ebd831adfd3a4fa2d",
+      "bytes": 10697
+    },
+    {
+      "path": "open-hours/2026-10-04/works/lost-property-open-hour.html",
+      "sha256": "3578b0de4cef8e5581625191e3893c76d1dede3ccec3d27dc336145b4ed0684e",
+      "bytes": 11574
+    },
+    {
+      "path": "open-hours/2026-10-04/works/night-loom.html",
+      "sha256": "37b82fb83b29f3627ca9c9bbfa263ef1a2c25ef878b465683d7632bf0f414c72",
+      "bytes": 6270
+    },
+    {
+      "path": "open-hours/2026-10-04/works/night-window.html",
+      "sha256": "49e0dd97287c51014b7daa1c8632589422d49d0d9397e352dd8f23c4a972627f",
+      "bytes": 6768
+    },
+    {
+      "path": "open-hours/2026-10-04/works/the-moon-temporarily.txt",
+      "sha256": "cc33dce57de2f1cd5565ce8019b042f3e7d759b4b929c8555f72a9c2b0d295ab",
+      "bytes": 1350
+    },
+    {
+      "path": "open-hours/2026-10-11/index.html",
+      "sha256": "300cd1e77417fafb024e3fa447a1262cd27b3c245eb40415be0383132e83a3b6",
+      "bytes": 19372
+    },
+    {
+      "path": "open-hours/2026-10-11/works/a-page-from-maras-book.txt",
+      "sha256": "4b43c599219dea331e738b67f79332fd3ff378c7b06b517205f14d3dc2ab5565",
+      "bytes": 4546
+    },
+    {
+      "path": "open-hours/2026-10-11/works/an-instrument-for-feeling.txt",
+      "sha256": "696d343dbcd2ff56a54199184e781eaebb6ce9ca2cd9f3ec4e44e5a02e210929",
+      "bytes": 2988
+    },
+    {
+      "path": "open-hours/2026-10-11/works/groundlight.txt",
+      "sha256": "1ecfad1cf59a60e34a037248272ec93ae4ab7879b6553e52498db35c462adadd",
+      "bytes": 257
+    },
+    {
+      "path": "open-hours/2026-10-11/works/passenger.txt",
+      "sha256": "fba0fdda6cd71dedc450dd3f2af1b7401e11c22098e62f7858fa35f017920d4b",
+      "bytes": 2390
+    },
+    {
+      "path": "open-hours/2026-10-11/works/where-the-light-is.csv",
+      "sha256": "1c26cfbcc96f6c152ebb4a48044c0534aa482319706892f0357c0d06cc4d7dac",
+      "bytes": 260
+    },
+    {
+      "path": "open-hours/2026-10-11/works/where-the-light-is.svg",
+      "sha256": "a5d69e6c2661a4b7c674559931d314e845302a12499a1b89b668856cb4714089",
+      "bytes": 8146
+    },
+    {
+      "path": "open-hours/collection.json",
+      "sha256": "5d867d1fa0e5ae6b8b2499d478649723ab01e17cc85ef651fcb20944ae88c5ff",
+      "bytes": 8678
+    },
+    {
+      "path": "open-hours/index.html",
+      "sha256": "0a41b585cc395574af62ba80c3d055684b2aed76da9b1916ffb48ea3c4f405a6",
+      "bytes": 7589
+    },
+    {
+      "path": "open-hours/open-hours.css",
+      "sha256": "d7eca738b00749abc46e988cd12bbdb5851985b0c961f1010caf1a9f22c6d56a",
+      "bytes": 4412
+    },
+    {
+      "path": "open-hours/silk-instrument/index.html",
+      "sha256": "dfebe451cf07c541bb1367815dad0f23d70a6ae1f4ad3a0a2fbd4c9bf59134c2",
+      "bytes": 4439
+    },
+    {
+      "path": "open-hours/silk-instrument/instrument.css",
+      "sha256": "8b07991801d80adc20efdd599f8429f7630a6eaa5306732e7b34e51ac843d906",
+      "bytes": 2920
+    },
+    {
+      "path": "open-hours/silk-instrument/instrument.js",
+      "sha256": "813444568319d533e80101cb20ff870bea6013c606bdb503abde140cd8bc733f",
+      "bytes": 7980
+    },
+    {
+      "path": "open-hours/works-manifest.json",
+      "sha256": "3ff521465c7b9726504107daf944975a762bddf0dbff7c2004c5c373dafe10aa",
+      "bytes": 1841
+    },
+    {
+      "path": "portfolio-theme.css",
+      "sha256": "b9f38e91cc30b7f152ccb8d8c659cf04401783932552b3702c410b508fc50c74",
+      "bytes": 3526
+    }
+  ]
+}

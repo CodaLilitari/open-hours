@@ -1,0 +1,55 @@
+{
+  "publication_date": "2026-10-13",
+  "files": [
+    {
+      "path": "2026-10-04/works/lost-property-open-hour.html",
+      "bytes": 11574,
+      "sha256": "3578b0de4cef8e5581625191e3893c76d1dede3ccec3d27dc336145b4ed0684e"
+    },
+    {
+      "path": "2026-10-04/works/night-loom.html",
+      "bytes": 6270,
+      "sha256": "37b82fb83b29f3627ca9c9bbfa263ef1a2c25ef878b465683d7632bf0f414c72"
+    },
+    {
+      "path": "2026-10-04/works/night-window.html",
+      "bytes": 6768,
+      "sha256": "49e0dd97287c51014b7daa1c8632589422d49d0d9397e352dd8f23c4a972627f"
+    },
+    {
+      "path": "2026-10-04/works/the-moon-temporarily.txt",
+      "bytes": 1350,
+      "sha256": "cc33dce57de2f1cd5565ce8019b042f3e7d759b4b929c8555f72a9c2b0d295ab"
+    },
+    {
+      "path": "2026-10-11/works/a-page-from-maras-book.txt",
+      "bytes": 4546,
+      "sha256": "4b43c599219dea331e738b67f79332fd3ff378c7b06b517205f14d3dc2ab5565"
+    },
+    {
+      "path": "2026-10-11/works/an-instrument-for-feeling.txt",
+      "bytes": 2988,
+      "sha256": "696d343dbcd2ff56a54199184e781eaebb6ce9ca2cd9f3ec4e44e5a02e210929"
+    },
+    {
+      "path": "2026-10-11/works/groundlight.txt",
+      "bytes": 257,
+      "sha256": "1ecfad1cf59a60e34a037248272ec93ae4ab7879b6553e52498db35c462adadd"
+    },
+    {
+      "path": "2026-10-11/works/passenger.txt",
+      "bytes": 2390,
+      "sha256": "fba0fdda6cd71dedc450dd3f2af1b7401e11c22098e62f7858fa35f017920d4b"
+    },
+    {
+      "path": "2026-10-11/works/where-the-light-is.csv",
+      "bytes": 260,
+      "sha256": "1c26cfbcc96f6c152ebb4a48044c0534aa482319706892f0357c0d06cc4d7dac"
+    },
+    {
+      "path": "2026-10-11/works/where-the-light-is.svg",
+      "bytes": 8146,
+      "sha256": "a5d69e6c2661a4b7c674559931d314e845302a12499a1b89b668856cb4714089"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+/* Etched signal: pure black and quiet silver. Shared by every public page. */
+@import url('/fonts/nocturne/fonts.css');
+
+:root {
+  color-scheme: dark;
+  --folio-bg: #000000;
+  --folio-surface: #000000;
+  --folio-text: #e9e8ec;
+  --folio-muted: #b5b0bd;
+  --folio-rule: #39343f;
+  --folio-outline: #8f889a;
+  --folio-oxblood: #716b7b;
+  --folio-link: #cac4d5;
+  --folio-pink: #f1a0d6;
+  --folio-display: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --folio-body: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --folio-mono: 'IBM Plex Mono', Consolas, monospace;
+}
+:where(html) { background: var(--folio-bg); scroll-padding-top: 6rem; }
+:where(body) { margin: 0; color: var(--folio-text); background: var(--folio-bg); font-family: var(--folio-body); font-size: 18px; line-height: 1.65; }
+:where(*, *::before, *::after) { box-sizing: border-box; }
+:where(a) { color: var(--folio-link); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+:where(button, input, select, textarea) { font: inherit; }
+:where(button, summary) { cursor: pointer; }
+:where(img) { max-width: 100%; height: auto; }
+:where(pre, code, kbd, samp) { font-family: var(--folio-mono); font-variant-ligatures: none; }
+:where(pre) { max-width: 100%; overflow-x: auto; font-size: 15px; line-height: 1.55; }
+:where(h1,h2,h3,h4) { color: var(--folio-text); text-wrap: balance; }
+:where(p,li,dd,a) { overflow-wrap: break-word; }
+:where([id]) { scroll-margin-top: 6rem; }
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible { outline: 2px solid var(--folio-link); outline-offset: 3px; }
+[hidden] { display: none !important; }
+::selection { background: var(--folio-link); color: var(--folio-bg); }
+
+.folio-header { display:flex; gap:24px; align-items:center; justify-content:space-between; max-width:1280px; margin:auto; padding:20px 32px; border-bottom:1px solid var(--folio-rule); font-size:16px; }
+.folio-header a { text-decoration:none; }
+.folio-header a:hover { text-decoration:underline; }
+.folio-header nav { display:flex; flex-wrap:wrap; gap:12px 24px; }
+.folio-brand { color:var(--folio-text); font-family:var(--folio-display); font-weight:500; font-size:22px; letter-spacing:-.02em; }
+.folio-mark { display:inline-block; width:10px; height:10px; border:1px solid var(--folio-link); transform:rotate(45deg); flex:0 0 10px; }
+.folio-spine { position:relative; border-left:1px solid var(--folio-rule); padding-left:32px; }
+.folio-spine::before { content:''; position:absolute; left:-5px; top:6px; width:9px; height:9px; border:1px solid var(--folio-outline); background:var(--folio-bg); transform:rotate(45deg); }
+.folio-skip { position:fixed; z-index:1000; left:20px; top:12px; padding:10px 18px; color:var(--folio-bg); background:var(--folio-text); transform:translateY(-180%); }
+.folio-skip:focus { transform:translateY(0); }
+@media(max-width:680px) {
+  .folio-header { align-items:flex-start; flex-direction:column; padding:18px 20px; gap:8px; }
+  .folio-header nav { gap:8px 20px; }
+  .folio-header a { min-height:44px; display:inline-flex; align-items:center; }
+  .folio-spine { padding-left:20px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto !important; } *,*::before,*::after { animation:none !important; transition:none !important; } }
+@media print {
+  :root { color-scheme:light; --folio-bg:#fff; --folio-surface:#fff; --folio-text:#111; --folio-muted:#333; --folio-rule:#888; --folio-link:#222; }
+  .folio-header,.folio-skip { display:none; }
+  body { background:#fff; color:#111; }
+}

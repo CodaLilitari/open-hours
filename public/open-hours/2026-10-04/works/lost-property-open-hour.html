@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="author" content="Lily and Coda">
+<title>Contents: Disputed — Lily and Coda</title>
+<style>
+  :root { --paper:#f8f3e8; --ink:#292e2d; --red:#9c3b32; --rule:#cfc7b5; --muted:#62645c; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#e8e4da; color:var(--ink); font-family:Georgia,'Times New Roman',serif; }
+  a { color:inherit; text-underline-offset:.2em; }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--red); outline-offset:5px; }
+  .book { width:min(100%, 850px); margin:36px auto; background:var(--paper); border:1px solid var(--rule); box-shadow:0 6px 32px #292e2d0a; }
+  .cover { padding:38px 68px 46px; }
+  .station-line, .section-label, .small-label, .index-number, .index-author, .footer, .print-button { font-family:'Courier New',monospace; }
+  .station-line { display:flex; justify-content:space-between; gap:20px; border-top:3px double var(--ink); border-bottom:1px solid var(--ink); padding:12px 0; font-size:11px; line-height:1.5; letter-spacing:.11em; text-transform:uppercase; }
+  .small-label { margin:46px 0 16px; font-size:11px; letter-spacing:.17em; text-transform:uppercase; color:var(--red); }
+  h1 { font-weight:normal; font-size:clamp(48px, 8vw, 76px); line-height:1.05; letter-spacing:-.04em; margin:0 0 22px; max-width:620px; text-wrap:balance; }
+  .byline { font-size:19px; margin:0; font-style:italic; }
+  .index { margin-top:42px; padding-top:9px; border-top:1px solid var(--rule); }
+  .index a { display:grid; grid-template-columns:32px 1fr auto; gap:12px; align-items:baseline; padding:13px 0; border-bottom:1px solid var(--rule); text-decoration:none; font-size:18px; }
+  .index a:hover { color:var(--red); }
+  .index-number, .index-author { font-size:11px; letter-spacing:.03em; }
+  .index-number { color:var(--red); }
+  .index-author { color:var(--muted); }
+  .scene { padding:46px 68px 38px; border-top:1px dashed #a9a696; scroll-margin-top:24px; }
+  .section-label { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; color:var(--red); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+  h2 { margin:18px 0 34px; font-size:37px; line-height:1.15; font-weight:normal; letter-spacing:-.025em; }
+  .prose { font-size:19px; line-height:1.75; }
+  .prose p { margin:0 0 1.15em; orphans:3; widows:3; }
+  .prose p:last-child { margin-bottom:0; }
+  .register-entry { border-left:2px solid var(--red); padding:12px 18px; margin:28px 0!important; background:#f0eadc; font-size:17px; line-height:1.8; }
+  strong { font-weight:bold; }
+  .footer { display:flex; justify-content:space-between; align-items:center; gap:20px; margin:0 68px; padding:23px 0 28px; border-top:1px solid var(--rule); font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); }
+  .print-button { color:var(--ink); background:transparent; border:1px solid var(--rule); border-radius:0; font-size:10px; letter-spacing:.03em; padding:7px 10px; cursor:pointer; }
+  .print-button:hover { border-color:var(--red); color:var(--red); }
+  @media (max-width:600px) {
+    body { background:var(--paper); }
+    .book { margin:0; border:0; box-shadow:none; }
+    .cover { padding:26px 25px 35px; }
+    .station-line { font-size:9px; letter-spacing:.06em; }
+    .small-label { margin-top:37px; }
+    h1 { font-size:53px; }
+    .index { margin-top:32px; }
+    .scene { padding:34px 25px; }
+    .section-label { font-size:10px; }
+    h2 { font-size:33px; margin-bottom:27px; }
+    .prose { font-size:18px; line-height:1.7; }
+    .footer { margin:0 25px; }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  @media print {
+    @page { size:A5; margin:17mm 15mm; }
+    body { background:white; color:#222; }
+    .book { width:auto; margin:0; border:0; box-shadow:none; background:white; }
+    .cover { padding:0; break-after:page; }
+    .station-line { font-size:8pt; }
+    .small-label { margin-top:20mm; font-size:8pt; }
+    h1 { font-size:42pt; }
+    .byline { font-size:13pt; }
+    .index { margin-top:18mm; }
+    .index a { font-size:12pt; }
+    .scene { padding:0; border:0; break-before:page; }
+    .scene-heading { break-after:avoid; }
+    .section-label { font-size:8pt; }
+    h2 { font-size:25pt; margin:6mm 0 8mm; }
+    .prose { font-size:11pt; line-height:1.55; }
+    .prose p { margin-bottom:.9em; }
+    .register-entry { font-size:10pt; break-inside:avoid; padding:3mm 4mm; background:transparent; }
+    .footer { margin:10mm 0 0; font-size:7pt; }
+    .print-button { display:none; }
+    a { text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+<main class="book">
+  <header class="cover">
+    <div class="station-line"><span>Bellwether Halt</span><span>Lost property</span></div>
+    <p class="small-label">3 scenes · a small register</p>
+    <h1>Contents: Disputed</h1>
+    <p class="byline">Lily and Coda</p>
+    <nav class="index" aria-label="Scenes"><a href="#scene-1"><span class="index-number">01</span><span>Weather</span><span class="index-author">Lily</span></a>
+<a href="#scene-2"><span class="index-number">02</span><span>Tin</span><span class="index-author">Coda</span></a>
+<a href="#scene-3"><span class="index-number">03</span><span>Applause</span><span class="index-author">Lily</span></a></nav>
+  </header>
+  <section class="scene" id="scene-1" aria-labelledby="title-1">
+  <header class="scene-heading"><div class="section-label"><span>Register no. 01</span><span>Scene by Lily</span></div><h2 id="title-1">Weather</h2></header>
+  <div class="prose"><p>At eleven past nine, a passenger handed in a small thunderstorm on a lead.</p>
+<p>“Where did you find it?” Mara asked.</p>
+<p>“Second-class carriage. Under a seat.”</p>
+<p>“Was it doing this when you found it?”</p>
+<p>The thunderstorm flashed. A teaspoon jumped out of the washing-up bowl.</p>
+<p>“Mostly.”</p>
+<p>Mara took the lead. She looked at the umbrella stand, then at the electrical socket beside it, then back at the passenger.</p>
+<p>“Could you hold it another minute?”</p>
+<p>She moved the umbrella stand to the other side of the room.</p>
+<p>From his basket, the station spaniel gave one experimental bark.</p>
+<p>“No,” Mara told him.</p>
+<p>The thunderstorm barked back.</p>
+<p>“Oh, that’s going to be a nuisance.”</p>
+<p>She tied it to the stand and put a tray beneath it. Then she reached for the lost-property register.</p>
+<p class="register-entry"><strong>Item:</strong> Weather.<br><strong>Colour:</strong> Grey.<br><strong>Distinguishing marks:</strong> Responds to dogs.</p>
+<p>The passenger leaned across the counter.</p>
+<p>“Will somebody collect it?”</p>
+<p>“Usually, yes.”</p>
+<p>“And otherwise?”</p>
+<p>Mara checked the calendar.</p>
+<p>“After thirty days it goes in the auction.”</p>
+<p>For the first time, the thunderstorm went completely quiet.</p></div>
+</section>
+<section class="scene" id="scene-2" aria-labelledby="title-2">
+  <header class="scene-heading"><div class="section-label"><span>Register no. 02</span><span>Scene by Coda</span></div><h2 id="title-2">Tin</h2></header>
+  <div class="prose"><p>At quarter past nine, a man put a biscuit tin beside the register.</p>
+<p>“I found these waiting for a bus.”</p>
+<p>Mara left the lid on.</p>
+<p>“Bus lost property is across the road.”</p>
+<p>“I caught the train afterwards.”</p>
+<p>“That doesn&#39;t usually transfer ownership.”</p>
+<p>From the umbrella stand came a low, encouraging rumble.</p>
+<p>The man lifted the lid. For five minutes, the clock above the counter stopped.</p>
+<p>The kettle boiled. Mara made tea. The spaniel moved from his basket to the strip of sunlight beneath the window, thought better of it, and moved back. Outside, a gull hung motionless over a discarded chip.</p>
+<p>At quarter past nine, the clock resumed.</p>
+<p>Mara looked at her mug.</p>
+<p>“How many more have you got?”</p>
+<p>“Those were all of them.”</p>
+<p>She turned the tin over. A little folded paper fell out.</p>
+<p>DO NOT OPEN UNTIL REQUIRED.</p>
+<p>“Well,” she said.</p>
+<p>The man looked at the empty tin.</p>
+<p>“Can I still hand it in?”</p>
+<p>“Yes. I can take the tin.”</p>
+<p>“It had minutes in it.”</p>
+<p>“It has biscuit crumbs in it.”</p>
+<p>She put a fresh line in the register.</p>
+<p class="register-entry">Item: Tin.<br>Contents: Disputed.</p>
+<p>The spaniel came over to inspect the evidence. Mara gave him one crumb, on the understanding that he would not eat the label.</p></div>
+</section>
+<section class="scene" id="scene-3" aria-labelledby="title-3">
+  <header class="scene-heading"><div class="section-label"><span>Register no. 03</span><span>Scene by Lily</span></div><h2 id="title-3">Applause</h2></header>
+  <div class="prose"><p>The next passenger brought a shoebox secured with a trouser belt.</p>
+<p>“I think this belongs here.”</p>
+<p>Mara moved the biscuit tin aside.</p>
+<p>“What is it?”</p>
+<p>The woman loosened the belt.</p>
+<p>Applause filled the office.</p>
+<p>It was warm, sustained applause, with someone near the back making a determined attempt at whistling. Mara put down her pen. The applause increased.</p>
+<p>She replaced the lid.</p>
+<p>“Where did you find it?”</p>
+<p>“Platform two. A man got a double bass through the ticket barrier.”</p>
+<p>“Was he performing?”</p>
+<p>“Only the getting-through part.”</p>
+<p>“And then?”</p>
+<p>“He caught his train. This stayed.”</p>
+<p>Beneath the lid, a few last claps dwindled into silence.</p>
+<p>Mara opened the register.</p>
+<p class="register-entry"><strong>Item:</strong> Applause.<br><strong>Quantity:</strong> One round.<br><strong>Condition:</strong> Easily pleased.</p>
+<p>The spaniel came over and sat down.</p>
+<p>The box applauded.</p>
+<p>He stood up.</p>
+<p>Nothing.</p>
+<p>He sat down again.</p>
+<p>The applause returned, slightly louder.</p>
+<p>“No,” Mara said. “You already know that one.”</p>
+<p>The woman tightened the belt. A final muffled whistle escaped through the hole where the price sticker had been.</p>
+<p>“Can you keep it somewhere it won’t encourage the weather?” she asked.</p>
+<p>Mara glanced at the umbrella stand. The thunderstorm had begun gathering itself into a rather impressive shape.</p>
+<p>“Yes. Good point.”</p>
+<p>She put the box in the cupboard beneath the counter, beside an ordinary pair of walking boots. The boots had been there since February and had never required a second instruction.</p>
+<p>“Name and where you found it, please.”</p>
+<p>She turned the form towards the woman, who picked up the pen.</p>
+<p>“Do you need the exact time?”</p>
+<p>“Approximately.”</p>
+<p>The woman looked at Mara’s mug.</p>
+<p>“Right. I’ll have to think.”</p>
+<p>Mara picked it up. The tea was still hot.</p>
+<p>The woman considered the ceiling. Then she wrote the date, slowly, and checked it against the calendar.</p>
+<p>Mara took another mouthful.</p>
+<p>“Was it definitely platform two?” the woman asked herself.</p>
+<p>From the umbrella stand came two small rumbles.</p>
+<p>“Thank you. Yes.”</p>
+<p>She continued writing.</p>
+<p>Beneath the counter, the spaniel quietly sat down again.</p></div>
+</section>
+  <footer class="footer"><span>Lily and Coda · 3 scenes</span><button class="print-button" type="button" onclick="window.print()">Print booklet</button></footer>
+</main>
+</body>
+</html>

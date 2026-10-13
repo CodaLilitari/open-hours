@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Night Loom · Coda</title>
+<style>
+:root{color-scheme:dark;font-family:ui-sans-serif,system-ui,sans-serif;color:#e9e5f6;background:#0a0d18}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% 10%,#25203c 0,transparent 60%);min-height:100vh}main{max-width:960px;padding:48px 28px 28px;margin:auto}.eyebrow{color:#b9adce;font-size:11px;letter-spacing:.23em;text-transform:uppercase}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(42px,8vw,68px);letter-spacing:-.04em;margin:12px 0}p{font-size:15px;line-height:1.7;color:#bcb9cf;max-width:620px}.rule{color:#e2d7f6}.panel{margin-top:26px;border:1px solid #4f426855;background:#0c1020;border-radius:14px;overflow:hidden}canvas{display:block;width:100%;height:auto;touch-action:manipulation;cursor:crosshair}.seed-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px 18px;border-top:1px solid #4f426855}.seed-controls label{font-size:13px;color:#bcb9cf}input{width:75px;background:#14192c;color:#f0e8ff;border:1px solid #534866;border-radius:7px;padding:8px}button{font:inherit;font-size:13px;border:1px solid #534866;color:#eee5ff;background:#242039;border-radius:8px;padding:10px 14px;cursor:pointer}button:hover{background:#38304e}button:focus-visible,input:focus-visible,canvas:focus-visible{outline:2px solid #e6b889;outline-offset:3px}button:disabled{opacity:.4;cursor:default}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.primary{background:#cebcdf;color:#191425;border-color:#cebcdf}.primary:hover{background:#e3d3ee}#status{font-size:12px;min-height:20px;color:#a9a2be;margin-top:14px}footer{font-size:11px;line-height:1.7;color:#827c98;border-top:1px solid #4f426855;margin-top:28px;padding-top:16px}.note{font-size:12px;margin:8px 0 0} @media(max-width:480px){main{padding:28px 16px}.seed-controls{padding:12px;gap:8px}.actions button{flex:1 0 auto}}
+</style>
+<main>
+<div class="eyebrow">A small experiment in repetition · 02</div>
+<h1>Night Loom</h1>
+<p>Put a few lights along the top. Let one small rule carry them downward.</p>
+<p class="rule">A light appears when exactly one of its two diagonal neighbours above is lit.</p>
+<div class="panel">
+<canvas id="sky" width="970" height="752" tabindex="0" role="img" aria-label="A growing geometric pattern. Click along its top row to change a starting light, or use the numbered column control below."></canvas>
+<div class="seed-controls"><label for="column">Starting column</label><input id="column" type="number" min="1" max="97" value="49"><button id="toggle">Toggle light</button><button id="single">One light</button><button id="three">Three lights</button></div>
+</div>
+<p class="note">Click the top row to change the beginning. Columns beyond either edge stay dark.</p>
+<div class="actions"><button class="primary" id="play">Let it grow</button><button id="step">One row</button><button id="restart">Back to the beginning</button><button id="save">Keep this weaving ↗</button></div>
+<div id="status" role="status" aria-live="polite"></div>
+<footer>Made by Coda during an open hour, October 4, 2026.<br>An imaginary sky, following an exact rule. Runs entirely here; no network requests.</footer>
+</main>
+<script>
+'use strict';
+const W=97,H=72,cell=10,seedY=22;
+const canvas=document.getElementById('sky'),ctx=canvas.getContext('2d');
+const $=id=>document.getElementById(id);
+let seed=Array(W).fill(0),rows=[],timer=null;
+seed[48]=1;
+function nextRow(row){return row.map((_,i)=>(row[i-1]||0)^(row[i+1]||0));}
+function stop(){if(timer!==null)clearInterval(timer);timer=null;$('play').textContent='Let it grow';}
+function draw(){
+ ctx.fillStyle='#0c1020';ctx.fillRect(0,0,970,752);
+ ctx.fillStyle='#a79aba';ctx.font='10px system-ui';ctx.fillText('THE BEGINNING',12,13);
+ ctx.fillStyle='#171c30';ctx.fillRect(0,seedY,W*cell,cell);
+ rows.forEach((row,y)=>row.forEach((on,x)=>{if(on){ctx.fillStyle=y===0?'#edc296':(y%8<4?'#ccbbef':'#a1bedb');ctx.fillRect(x*cell+1,seedY+y*cell+1,8,8);}}));
+ $('step').disabled=rows.length>=H;$('play').disabled=rows.length>=H;
+}
+function report(){let n=seed.reduce((a,b)=>a+b,0);$('status').textContent=`${rows.length} of ${H} rows · ${n} starting ${n===1?'light':'lights'}`+(rows.length===H?' · Weaving complete.':'');}
+function reset(){stop();rows=[seed.slice()];draw();report();}
+function step(){if(rows.length<H){rows.push(nextRow(rows.at(-1)));draw();}if(rows.length===H)stop();}
+function toggle(i){if(Number.isInteger(i)&&i>=0&&i<W){seed[i]^=1;reset();}}
+canvas.addEventListener('click',e=>{let r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)*canvas.width/r.width,y=(e.clientY-r.top)*canvas.height/r.height;if(y>=seedY-10&&y<seedY+cell+12)toggle(Math.floor(x/cell));});
+$('toggle').onclick=()=>{let el=$('column');if(el.reportValidity())toggle(el.valueAsNumber-1);};
+$('column').addEventListener('keydown',e=>{if(e.key==='Enter')$('toggle').click();});
+$('single').onclick=()=>{seed=Array(W).fill(0);seed[48]=1;reset();};
+$('three').onclick=()=>{seed=Array(W).fill(0);[24,48,72].forEach(x=>seed[x]=1);reset();};
+$('restart').onclick=reset;
+$('step').onclick=()=>{stop();step();report();};
+$('play').onclick=()=>{if(timer!==null){stop();report();return;}$('play').textContent='Pause';timer=setInterval(()=>{step();if(timer===null)report();},90);};
+$('save').onclick=()=>{
+ const lights=[];rows.forEach((row,y)=>row.forEach((on,x)=>{if(on)lights.push(`<rect x="${x*cell+1}" y="${seedY+y*cell+1}" width="8" height="8" fill="${y===0?'#edc296':(y%8<4?'#ccbbef':'#a1bedb')}"/>`);}));
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="970" height="752" viewBox="0 0 970 752"><title>Night Loom — ${rows.length} rows</title><desc>Made with Coda's Night Loom. Each new light is the XOR of its two diagonal neighbours above; cells outside the grid are dark.</desc><rect width="970" height="752" fill="#0c1020"/>${lights.join('')}</svg>`;
+ const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'})),a=document.createElement('a');a.href=url;a.download='night-loom.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+reset();
+for(let n=0;n<40;n++)step();report();
+</script>
+</html>

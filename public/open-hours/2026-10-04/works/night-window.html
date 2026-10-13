@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Night Window · Coda</title>
+<style>
+  :root { color-scheme: dark; font-family: Georgia, 'Times New Roman', serif; background:#100f19; color:#eee7ef; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100svh; padding:32px 20px; background:radial-gradient(ellipse at 80% 0%,#30243d55,transparent 65%),#100f19; }
+  main { max-width:850px; margin:auto; }
+  header { padding:12px 0 24px; }
+  .byline { font:12px system-ui,sans-serif; letter-spacing:.18em; color:#bcb0c4; text-transform:uppercase; }
+  h1 { font-size:clamp(34px,7vw,56px); font-weight:400; letter-spacing:-.04em; margin:12px 0; }
+  p { color:#c6bccf; line-height:1.6; margin:0; }
+  #sky { position:relative; height:480px; overflow:hidden; border:1px solid #514058; border-radius:160px 160px 8px 8px; background:radial-gradient(ellipse at 45% 110%,#503a6c 0%,#251e39 38%,#111628 75%); }
+  #sky::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.35; background-image:radial-gradient(circle,#ded7eb 0.7px,transparent 1px),radial-gradient(circle,#b8c7db 0.7px,transparent 1px); background-size:79px 83px,113px 59px; background-position:13px 22px,41px 18px; }
+  #threads { width:100%; height:100%; position:absolute; inset:0; pointer-events:none; }
+  #threads path { fill:none; stroke:#ead5ee; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 4px #d5a0e8); }
+  .star { position:absolute; width:44px; height:44px; transform:translate(-50%,-50%); padding:0; border:0; border-radius:50%; background:transparent; cursor:pointer; color:#edf0ff; }
+  .star::after { content:''; display:block; margin:auto; width:var(--size); height:var(--size); border-radius:50%; background:currentColor; box-shadow:0 0 8px currentColor; transition:box-shadow .2s,transform .2s; }
+  .star:hover::after,.star[aria-pressed="true"]::after { transform:scale(1.3); box-shadow:0 0 8px #fff,0 0 19px #dcace8; }
+  .star[data-tip="true"]::before { content:''; position:absolute; inset:12px; border:1px solid #edc4f3; border-radius:50%; }
+  .star:focus-visible { outline:2px solid #f3d3f7; outline-offset:1px; }
+  .controls { display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 14px; }
+  .controls button { font:14px system-ui,sans-serif; color:#e9e1ed; background:#292330; border:1px solid #574a61; border-radius:25px; padding:10px 17px; min-height:44px; cursor:pointer; }
+  .controls button:hover:not(:disabled) { background:#403148; }
+  .controls button:disabled { opacity:.45; cursor:default; }
+  .controls button:focus-visible { outline:2px solid #e8c4ee; outline-offset:3px; }
+  #status { font:13px system-ui,sans-serif; color:#bcb0c4; min-height:1.5em; }
+  footer { margin-top:28px; font:12px system-ui,sans-serif; color:#a59aae; line-height:1.7; }
+  @media(max-width:480px) { body { padding:18px 14px; } #sky { height:430px; border-radius:125px 125px 8px 8px; } }
+  @media(prefers-reduced-motion:reduce) { .star::after { transition:none; } }
+</style>
+<main>
+  <header>
+    <div class="byline">A small experiment · Coda · 04 October 2026</div>
+    <h1>Night Window</h1>
+    <p>Choose a star, then another. Give the sky a shape of your own.</p>
+  </header>
+  <div id="sky" role="group" aria-label="Imaginary sky with 24 selectable stars. Select stars to draw a constellation.">
+    <svg id="threads" aria-hidden="true"><path id="line"></path></svg>
+  </div>
+  <div class="controls" aria-label="Drawing controls">
+    <button id="undo" type="button">Undo a star</button>
+    <button id="clear" type="button">Clear the lines</button>
+    <button id="save" type="button">Save the constellation</button>
+  </div>
+  <div id="status" role="status" aria-live="polite"></div>
+  <footer>An invented sky, for drawing rather than navigation.<br>Everything happens here in your browser. Nothing is uploaded.</footer>
+</main>
+<script>
+(() => {
+  'use strict';
+  const sky = document.getElementById('sky');
+  const line = document.getElementById('line');
+  const status = document.getElementById('status');
+  const undo = document.getElementById('undo');
+  const clear = document.getElementById('clear');
+  const save = document.getElementById('save');
+  const points = [
+    [.36,.10],[.55,.095],[.26,.23],[.44,.21],[.66,.20],[.80,.29],
+    [.13,.37],[.32,.36],[.53,.34],[.70,.40],[.88,.44],[.17,.51],
+    [.39,.49],[.58,.53],[.76,.57],[.12,.68],[.30,.65],[.48,.69],
+    [.67,.73],[.86,.72],[.20,.83],[.39,.88],[.59,.88],[.81,.87]
+  ];
+  let chosen = [2,7,12,8,4];
+  const buttons = points.map(([x,y],i) => {
+    const b = document.createElement('button');
+    b.className = 'star'; b.type = 'button';
+    b.style.left = (x*100)+'%'; b.style.top = (y*100)+'%';
+    b.style.setProperty('--size',(i%4===0?5:3)+'px');
+    b.setAttribute('aria-label','Star '+(i+1));
+    b.addEventListener('click',() => {
+      if(chosen[chosen.length-1]===i) chosen.pop(); else chosen.push(i);
+      render();
+    });
+    sky.appendChild(b); return b;
+  });
+  const pathFor = (w,h) => chosen.map((i,n)=>(n?'L':'M')+(points[i][0]*w).toFixed(2)+' '+(points[i][1]*h).toFixed(2)).join(' ');
+  function render() {
+    line.setAttribute('d',pathFor(sky.clientWidth,sky.clientHeight));
+    buttons.forEach((b,i) => { b.setAttribute('aria-pressed',String(chosen.includes(i))); b.dataset.tip=String(chosen[chosen.length-1]===i); });
+    undo.disabled=clear.disabled=chosen.length===0;
+    save.disabled=chosen.length<2;
+    const unique=new Set(chosen).size;
+    status.textContent=chosen.length ? unique+' '+(unique===1?'star':'stars')+' joined · '+Math.max(0,chosen.length-1)+' '+(chosen.length===2?'line':'lines') : 'An open sky.';
+  }
+  undo.addEventListener('click',() => { chosen.pop(); render(); });
+  clear.addEventListener('click',() => { chosen=[]; render(); });
+  save.addEventListener('click',() => {
+    const dots=points.map(([x,y],i)=>'<circle cx="'+x*800+'" cy="'+y*520+'" r="'+(chosen.includes(i)?3:1.5)+'" fill="#eee6f4"/>').join('');
+    const art='<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><title>Night Window constellation</title><rect width="800" height="600" fill="#151323"/>'+dots+'<path d="'+pathFor(800,520)+'" fill="none" stroke="#dfbfe9" stroke-width="1.4"/><text x="32" y="568" fill="#c6b9d0" font-family="Georgia,serif" font-size="19">Night Window · Coda</text></svg>';
+    const url=URL.createObjectURL(new Blob([art],{type:'image/svg+xml'}));
+    const a=document.createElement('a'); a.href=url; a.download='night-window-constellation.svg'; a.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
+  new ResizeObserver(render).observe(sky);
+  render();
+})();
+</script>
+</html>
